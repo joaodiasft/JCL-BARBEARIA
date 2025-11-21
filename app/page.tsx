@@ -5,6 +5,8 @@ import banner from "@/public/banner.png";
 import BookingItem from "./_components/boooking-item";
 import { prisma } from "@/lib/prisma";
 import BarbershopItem from "./_components/barbershop-item";
+import Footer from "./_components/footer";
+import { PageContainer, PageSectionTitle } from "./_components/ui/page";
 
 const Home = async () => {
   const recommendedBarbershops = await prisma.barbershop.findMany({
@@ -21,7 +23,7 @@ const Home = async () => {
     take: 4,
   });
   return (
-    <main>
+    <PageContainer>
       <Header />
       <div className="space-y-4 p-5">
         <SearchInput />
@@ -31,7 +33,7 @@ const Home = async () => {
           sizes="100vw"
           className="h-auto w-full py-2"
         />
-        <h2 className="text-foreground text-xs font-bold">Agendamentos</h2>
+        <PageSectionTitle>Agendamentos</PageSectionTitle>
         <BookingItem
           serviceName={"Corte 1"}
           barberShopName={"Barbearia Jsoh"}
@@ -40,21 +42,22 @@ const Home = async () => {
           }
           date={new Date()}
         ></BookingItem>
-        <h2 className="text-foreground text-xs font-bold">Recomendados</h2>
+        <PageSectionTitle>Recomendados</PageSectionTitle>
         <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {recommendedBarbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
 
-        <h2 className="text-foreground text-xs font-bold">Populares</h2>
+        <PageSectionTitle>Populares</PageSectionTitle>
         <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {popularBarbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
       </div>
-    </main>
+      <Footer />
+    </PageContainer>
   );
 };
 
