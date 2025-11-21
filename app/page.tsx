@@ -50,6 +50,7 @@ const Home = async () => {
         </div>
 
         <PageSectionTitle>Populares</PageSectionTitle>
+
         <div className="flex gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {popularBarbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />

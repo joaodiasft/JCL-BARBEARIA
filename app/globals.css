@@ -101,7 +101,8 @@
   --sidebar-ring: oklch(0.433 0.0745 149.7347);
   --font-sans: Inter, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: JetBrains Mono, monospace;
+  --font-mono: JetBrains Mono, monospace, plus jakarta sans;
+  --font-heading: plus jakarta sans, sans-serif;
   --radius: 0.5rem;
   --shadow-x: 0;
   --shadow-y: 0.25rem;
@@ -191,5 +192,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family:
+      plus jakarta sans,
+      sans-serif;
   }
 }
