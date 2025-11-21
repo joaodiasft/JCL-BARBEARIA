@@ -19,7 +19,7 @@ const BookingItem = ({
 }: BookingItemProps) => {
   return (
     <Card className="flex w-full min-w-full flex-row items-center justify-between p-0">
-      <div className="flex flex-1 flex-col gap-4 p-4">
+      <div className="flex flex-1 flex-col gap-2 p-2">
         <Badge>Confirmado</Badge>
         <div className="flex flex-col gap-2">
           <p className="font-bold">{serviceName}</p>
@@ -34,7 +34,7 @@ const BookingItem = ({
         </div>
       </div>
 
-      <div className="border-l-primary flex h-full flex-col items-center justify-center border-l-2 p-4 py-3">
+      <div className="border-l-primary flex h-full flex-col items-center justify-center border-l-2 p-2 py-2">
         <p className="font-mono text-xs capitalize">
           {date.toLocaleDateString("pt-BR", { month: "long" })}
         </p>
